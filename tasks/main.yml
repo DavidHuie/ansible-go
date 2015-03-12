@@ -15,8 +15,8 @@
 
 - name: Add the Go bin directory to the PATH environment variable for all users
   template: src=go-bin.sh.j2
-            dest=/etc/profile.d
+            dest=/etc/profile.d/go-bin.sh
 
 - name: Set GOPATH for all users
   template: src=go-path.sh.j2
-            dest=/etc/profile.d
+            dest=/etc/profile.d/go-path.sh
