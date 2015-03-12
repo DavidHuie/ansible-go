@@ -14,9 +14,9 @@
   when: go_version|failed or go_version.stdout != go_version_target
 
 - name: Add the Go bin directory to the PATH environment variable for all users
-  copy: src=go-bin.sh
-        dest=/etc/profile.d
+  template: src=go-bin.sh.j2
+            dest=/etc/profile.d
 
 - name: Set GOPATH for all users
-  copy: src=go-path.sh
-        dest=/etc/profile.d
+  template: src=go-path.sh.j2
+            dest=/etc/profile.d
